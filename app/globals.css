@@ -3,17 +3,24 @@
 @tailwind utilities;
 
 body {
-  @apply bg-[#0b0b0b] overflow-y-hidden;
+	@apply bg-[#0b0b0b] md:overflow-y-hidden;
 }
 
 .custom-shadow {
-  letter-spacing: 0.1em;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 0px;
-  -webkit-text-stroke-color: #333;
-  text-shadow: 8px 8px #fff, 20px 20px #222;
+	letter-spacing: 0.1em;
+	-webkit-text-fill-color: transparent;
+	-webkit-text-stroke-width: 0px;
+	-webkit-text-stroke-color: #333;
+	text-shadow: 8px 8px #fff, 20px 20px #222;
+}
+
+@media (max-width: 768px) {
+	.custom-shadow {
+		letter-spacing: 0.05em;
+		text-shadow: 4px 4px #fff, 10px 10px #222;
+	}
 }
 
 .custom-yellow-shadow {
-  text-shadow: 8px 8px #ffb400, 20px 20px #222;
+	text-shadow: 8px 8px #ffb400, 20px 20px #222;
 }
