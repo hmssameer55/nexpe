@@ -8,6 +8,8 @@ import Story from '@/components/Story';
 import Hero from '@/components/Hero';
 import { BackgroundBeams } from '@/components/ui/background-beams';
 import Header from '@/components/Header';
+import FAQ from '@/components/Faq';
+import Social from '@/components/Social';
 
 const AnimatedSection = ({
 	children,
@@ -76,7 +78,8 @@ export default function Component() {
 		},
 		{ title: 'About', content: 'Our commitment to security' },
 		{ title: 'Social', content: 'Get in touch with our expert team' },
-		{ title: 'Blog', content: 'Stay updated with the latest in fintech' },
+		{ title: 'Faq', content: 'Frequency asked questions' },
+		// { title: 'Blog', content: 'Stay updated with the latest in fintech' },
 	];
 
 	useEffect(() => {
@@ -194,12 +197,13 @@ export default function Component() {
 						</AnimatedSection>
 					) : index === 2 ? (
 						<PaymentPartners />
+					) : index === 3 ? (
+						<AnimatedSection index={0}>
+							<Social />
+						</AnimatedSection>
 					) : (
 						<AnimatedSection index={0}>
-							<div className="text-center space-y-4">
-								<h2 className="text-4xl font-bold mb-4">{page.title}</h2>
-								<p className="text-xl max-w-2xl mx-auto">{page.content}</p>
-							</div>
+							<FAQ />
 						</AnimatedSection>
 					)}
 				</section>

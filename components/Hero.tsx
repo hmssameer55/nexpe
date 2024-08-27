@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { FaLongArrowAltRight } from 'react-icons/fa';
 import HeroImg from '@/public/assets/hero-device.png';
 import { FaApple, FaGooglePlay } from 'react-icons/fa6';
-import { Vortex } from '@/components/ui/vortex';
 import { motion } from 'framer-motion';
 
 export default function Component({

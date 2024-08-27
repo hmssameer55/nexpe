@@ -10,7 +10,7 @@ const words = [
 		text: 'At',
 	},
 	{
-		text: 'GoNexpe.',
+		text: 'GoNexPe.',
 		className: 'text-[#FDB665] ',
 	},
 	{
@@ -131,7 +131,7 @@ const TextGenerateEffectDemo = () => {
 
 			<div className=" p-4 max-w-7xl  mx-auto relative z-10 w-full md:pt-12">
 				<h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-					GoNexpe
+					GoNexPe
 				</h1>
 			</div>
 			<TextGenerateEffect words={words} duration={2} filter={false} />
