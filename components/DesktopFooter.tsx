@@ -30,16 +30,16 @@ export default function DesktopFooter() {
 	return (
 		<div className="overflow-hidden relative bg-zinc-900 text-zinc-200 border-none p-0 w-full">
 			<motion.div
-				className="absolute top-0 left-0 w-full h-full bg-zinc-800"
+				className="absolute top-0 left-0 w-full h-full bg-[#0b0b0b] hidden md:block"
 				initial={{ y: '100%' }}
 				animate={{ y: 0 }}
 				transition={{ duration: 0.6, ease: 'easeOut' }}
 				style={{
-					clipPath: 'ellipse(100% 55% at 48% 44%)',
+					clipPath: 'ellipse(20% 65% at 0% 54%)',
 				}}
 			/>
-			<div className="relative z-10 px-6 py-12 flex items-center md:h-screen rounded-none">
-				<div className="flex flex-col items-center space-y-14">
+			<div className="relative z-10 py-10 px-6 md:pl-12 md:py-12 flex items-center md:h-screen rounded-none">
+				<div className="flex flex-col items-center space-y-10 md:space-y-14">
 					<div className="flex space-x-6">
 						<SocialIcon href="https://facebook.com" Icon={FaFacebook} />
 						<SocialIcon href="https://twitter.com" Icon={FaSquareXTwitter} />
