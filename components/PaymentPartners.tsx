@@ -39,8 +39,8 @@ const PaymentPartners = () => {
 	};
 
 	return (
-		<div className="max-w-screen-xl mx-auto">
-			<h1 className="text-3xl font-bold text-center mb-12">
+		<div className="max-w-screen-xl mx-auto max-md:px-4">
+			<h1 className="text-2xl md:text-3xl font-bold text-center mb-12">
 				Our Trusted Payment Network
 			</h1>
 			<div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -65,7 +65,7 @@ const PaymentPartners = () => {
 							custom={index}
 							className="bg-gray-800 rounded-lg overflow-hidden"
 						>
-							<div className="relative h-48">
+							<div className="relative h-40 md:h-48">
 								<Image
 									src={partner.image}
 									alt={partner.title}
@@ -73,11 +73,13 @@ const PaymentPartners = () => {
 									objectFit="cover"
 								/>
 							</div>
-							<div className="p-6">
-								<h2 className="text-xl font-semibold mb-2 text-[#FDB665]">
+							<div className="p-4 md:p-6">
+								<h2 className="text base md:text-xl font-semibold mb-2 text-[#FDB665]">
 									{partner.title}
 								</h2>
-								<p className="text-gray-300 text-sm">{partner.description}</p>
+								<p className="text-gray-300 text-xs md:text-sm leading-snug">
+									{partner.description}
+								</p>
 							</div>
 						</motion.div>
 					);

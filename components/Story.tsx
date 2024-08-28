@@ -121,19 +121,21 @@ const TextGenerateEffectDemo = () => {
 	const isInView = useInView(ref, { once: true });
 
 	return (
-		<div className="relative max-w-screen-lg" ref={ref}>
+		<div
+			className="relative py-10 max-w-screen-lg mx-auto max-md:px-4"
+			ref={ref}
+		>
 			{isInView && (
 				<Spotlight
-					className="-top-20 left-0 md:left-60 md:-top-20"
+					className="-top-32 left-0 md:left-60 md:-top-20"
 					fill="white"
 				/>
 			)}
 
-			<div className=" p-4 max-w-7xl  mx-auto relative z-10 w-full md:pt-12">
-				<h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-					GoNexPe
-				</h1>
-			</div>
+			<h1 className="text-3xl mb-10 md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+				GoNexPe
+			</h1>
+
 			<TextGenerateEffect words={words} duration={2} filter={false} />
 		</div>
 	);

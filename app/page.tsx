@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { motion, useAnimation, useInView } from 'framer-motion';
 import { Scrollbars } from 'react-custom-scrollbars-2';
 import PaymentPartners from '@/components/PaymentPartners';
 import Story from '@/components/Story';
@@ -10,44 +9,8 @@ import { BackgroundBeams } from '@/components/ui/background-beams';
 import Header from '@/components/Header';
 import FAQ from '@/components/Faq';
 import Social from '@/components/Social';
-
-const AnimatedSection = ({
-	children,
-	index,
-}: {
-	children: React.ReactNode;
-	index: number;
-}) => {
-	const controls = useAnimation();
-	const ref = useRef(null);
-	const inView = useInView(ref, { once: true });
-
-	useEffect(() => {
-		if (inView) {
-			controls.start('visible');
-		}
-	}, [controls, inView]);
-
-	const variants = {
-		hidden: { opacity: 0, y: 50 },
-		visible: {
-			opacity: 1,
-			y: 0,
-			transition: { duration: 0.5, delay: index * 0.2 },
-		},
-	};
-
-	return (
-		<motion.div
-			ref={ref}
-			animate={controls}
-			initial="hidden"
-			variants={variants}
-		>
-			{children}
-		</motion.div>
-	);
-};
+import DesktopFooter from '@/components/DesktopFooter';
+import AnimatedSection from '@/components/AnimatedSection';
 
 const useMediaQuery = (query: string) => {
 	const [matches, setMatches] = useState(false);
@@ -71,15 +34,12 @@ export default function Component() {
 	const isMobile = useMediaQuery('(max-width: 767px)');
 
 	const pages = [
-		{ title: 'Home', content: 'Go Nexpe' },
-		{
-			title: 'Our Story',
-			content: 'Learn about our innovative payment solutions',
-		},
-		{ title: 'About', content: 'Our commitment to security' },
-		{ title: 'Social', content: 'Get in touch with our expert team' },
-		{ title: 'Faq', content: 'Frequency asked questions' },
-		// { title: 'Blog', content: 'Stay updated with the latest in fintech' },
+		'Home',
+		'Our Story',
+		'Payment Partners',
+		'Social',
+		'Faq',
+		'Support',
 	];
 
 	useEffect(() => {
@@ -87,7 +47,8 @@ export default function Component() {
 			if (scrollbarsRef.current && !isMobile) {
 				const scrollPosition = scrollbarsRef.current.getScrollLeft();
 				const pageWidth = scrollbarsRef.current.getClientWidth();
-				const currentPage = Math.round(scrollPosition / pageWidth);
+				const adjustedPosition = scrollPosition + pageWidth * 0.69;
+				const currentPage = Math.floor(adjustedPosition / pageWidth);
 				setCurrentPage(currentPage);
 			}
 		};
@@ -182,29 +143,33 @@ export default function Component() {
 					id={`section-${index}`}
 					className={`${
 						isMobile ? 'w-screen' : 'w-screen h-screen flex-shrink-0'
-					} flex flex-col items-center justify-center p-10`}
+					}
+					${index == 5 && 'md:max-w-md md:ml-10 !p-0'}
+						 flex flex-col items-center justify-center p-5 md:p-10`}
 				>
 					{index === 0 ? (
 						<div>
-							<AnimatedSection index={0}>
+							<AnimatedSection index={index}>
 								<Hero onScrollTo={scrollTo} />
 								<BackgroundBeams />
 							</AnimatedSection>
 						</div>
 					) : index === 1 ? (
-						<AnimatedSection index={0}>
+						<AnimatedSection index={index}>
 							<Story />
 						</AnimatedSection>
 					) : index === 2 ? (
 						<PaymentPartners />
 					) : index === 3 ? (
-						<AnimatedSection index={0}>
+						<AnimatedSection index={index}>
 							<Social />
 						</AnimatedSection>
-					) : (
-						<AnimatedSection index={0}>
+					) : index === 4 ? (
+						<AnimatedSection index={index}>
 							<FAQ />
 						</AnimatedSection>
+					) : (
+						<DesktopFooter />
 					)}
 				</section>
 			))}

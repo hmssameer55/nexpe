@@ -7,7 +7,7 @@ import BrandLogo from '@/public/assets/brand-logo-full.png';
 import { Menu, X } from 'lucide-react';
 
 interface HeaderProps {
-	pages: { title: string }[];
+	pages: string[];
 	currentPage: number;
 	scrollTo: (index: number) => void;
 }
@@ -42,11 +42,11 @@ export default function Component({
 						onClick={() => scrollTo(index)}
 						className={`${
 							currentPage === index
-								? "text-primary font-bold relative after:content-[''] after:absolute after:top-[-10px] after:left-0 after:w-full after:h-[8px] after:bg-[#FDB665] after:rounded-t-lg"
+								? "text-primary font-bold relative after:content-[''] after:absolute after:top-[-20px] after:left-0 after:w-full after:h-[8px] after:bg-[#FDB665] after:rounded-b-lg"
 								: 'text-white'
 						} hover:text-primary transition-colors text-lg font-semibold antialiased tracking-wider`}
 					>
-						{page.title}
+						{page}
 					</button>
 				))}
 			</nav>
@@ -80,16 +80,14 @@ export default function Component({
 										setIsMenuOpen(false);
 									}}
 									className={`${
-										currentPage === index
-											? 'text-primary font-bold'
-											: 'text-white'
-									} hover:text-primary transition-colors text-lg font-semibold antialiased tracking-wider`}
+										currentPage === index ? '' : 'text-white'
+									} hover:text-primary transition-colors text-md font-semibold antialiased tracking-wider`}
 								>
-									{page.title}
+									{page}
 								</button>
 							))}
 						</nav>
-						<div className="mt-4 text-sm">
+						<div className="mt-4 text-xs">
 							Email: <span className="text-primary">support@gonexpe.com</span>
 						</div>
 					</motion.div>

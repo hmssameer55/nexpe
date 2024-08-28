@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { Plus, Minus } from 'lucide-react';
 import { Card } from '@/components/ui/card';
@@ -53,7 +53,7 @@ const FAQItem = ({ question, answer, isOpen, onToggle, index }) => {
 					aria-expanded={isOpen}
 				>
 					<span
-						className={`text-lg font-medium transition-colors duration-200 ${
+						className={`text-base md:text-lg font-medium transition-colors duration-200 ${
 							isOpen ? 'text-primary' : 'text-gray-200'
 						}`}
 					>
@@ -149,13 +149,13 @@ export default function Component() {
 	return (
 		<div
 			ref={ref}
-			className="min-h-screen flex flex-col md:flex-row items-center justify-center gap-20 w-screen p-5 md:p-20"
+			className="md:min-h-screen flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20 p-5 md:p-20"
 		>
 			<motion.h2
 				initial={{ opacity: 0, y: -50 }}
 				animate={isInView ? { opacity: 1, y: 0 } : {}}
 				transition={{ duration: 0.8, ease: 'easeOut' }}
-				className="text-3xl md:text-5xl font-bold md:mb-8 text-primary !leading-snug"
+				className="text-2xl md:text-5xl font-bold md:mb-8 text-primary !leading-snug"
 			>
 				Frequently asked questions
 			</motion.h2>
