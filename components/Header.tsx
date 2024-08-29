@@ -26,7 +26,7 @@ export default function Component({
 			className="flex justify-between items-center px-4 sm:px-6 py-4 z-10 bg-transparent fixed top-0 left-0 right-0 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.3)] backdrop-blur-sm"
 			initial={{ y: -100 }}
 			animate={{ y: 0 }}
-			transition={{ type: 'spring', stiffness: 100, damping: 15 }}
+			transition={{ type: 'spring', stiffness: 50, damping: 20, duration: 0.8 }}
 		>
 			<Image
 				src={BrandLogo}
@@ -37,17 +37,36 @@ export default function Component({
 			/>
 			<nav className="hidden md:flex space-x-6">
 				{pages.map((page, index) => (
-					<button
-						key={index}
-						onClick={() => scrollTo(index)}
-						className={`${
-							currentPage === index
-								? "text-primary font-bold relative after:content-[''] after:absolute after:top-[-20px] after:left-0 after:w-full after:h-[8px] after:bg-[#FDB665] after:rounded-b-lg"
-								: 'text-white'
-						} hover:text-primary transition-colors text-lg font-semibold antialiased tracking-wider`}
-					>
-						{page}
-					</button>
+					<div key={index} className="relative">
+						<motion.button
+							key={index}
+							onClick={() => scrollTo(index)}
+							animate={{
+								color: currentPage === index ? '#FDB665' : '#FFFFFF',
+							}}
+							transition={{ duration: 0.5, ease: 'easeInOut' }}
+							exit={{ color: '#FFFFFF' }}
+							className="text-white text-md font-semibold antialiased tracking-wider"
+						>
+							{page}
+						</motion.button>
+						<AnimatePresence>
+							{currentPage === index && (
+								<motion.div
+									className="absolute top-[-22px] left-0 w-full h-[8px] bg-[#FDB665] rounded-b-lg"
+									initial={{ y: -30, opacity: 0 }}
+									animate={{ y: 0, opacity: 1 }}
+									exit={{ y: -30, opacity: 0 }}
+									transition={{
+										duration: 0.2,
+										type: 'spring',
+										stiffness: 70,
+										damping: 20,
+									}}
+								/>
+							)}
+						</AnimatePresence>
+					</div>
 				))}
 			</nav>
 			<div className="hidden md:flex items-center space-x-4">

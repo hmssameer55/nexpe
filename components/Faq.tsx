@@ -7,34 +7,28 @@ import { Card } from '@/components/ui/card';
 
 const faqs = [
 	{
-		question: 'What is the purpose of this website?',
-		answer:
-			'This website is a place to help you find the best products and services in the world.',
+		question: 'What payment methods does GoNexpe accept?',
+		answer: `GoNexpe accepts major credit cards, debit cards, and various online payment methods, ensuring a smooth and secure transaction experience.`,
 	},
 	{
-		question: 'How do I contact support?',
-		answer:
-			"You can contact our support team through the 'Contact Us' page or by emailing support@example.com.",
+		question: 'Is my payment information secure with GoNexpe?',
+		answer: `Yes, GoNexpe uses advanced encryption technology to protect your payment information during transactions.`,
 	},
 	{
-		question: 'How do I find the best products?',
-		answer:
-			'You can use our search feature, browse categories, or check out our curated lists of top-rated products.',
+		question: 'Does GoNexpe store my credit card details?',
+		answer: `No, GoNexpe does not store your credit card details on their servers.`,
 	},
 	{
-		question: 'Can I return a product?',
-		answer:
-			'Yes, we offer a 30-day return policy for most products. Please check the specific product page for details.',
+		question: 'How does GoNexpe ensure the security of my transactions?',
+		answer: `GoNexpe employs industry-standard security measures, including SSL encryption and secure payment gateways, to safeguard your transactions.`,
 	},
 	{
-		question: 'Do you offer international shipping?',
-		answer:
-			'Yes, we ship to many countries worldwide. Shipping costs and delivery times vary by location.',
+		question: 'Are there any additional charges or fees during checkout?',
+		answer: `GoNexpe is transparent about all costs; any additional charges, if applicable, are clearly shown before finalizing the payment.`,
 	},
 	{
-		question: 'How can I track my order?',
-		answer:
-			"Once your order is shipped, you'll receive a tracking number via email. You can use this to track your package on our website.",
+		question: 'What should I do if I experience a payment issue?',
+		answer: `If you encounter a payment issue, contact GoNexpe's customer support team immediately for assistance.`,
 	},
 ];
 
