@@ -70,7 +70,7 @@ export default function Social() {
 					</button>
 				</motion.div>
 
-				<div className="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+				<div className="w-full lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">
 					{storeData.map((store, index) => (
 						<motion.div
 							key={store.name}

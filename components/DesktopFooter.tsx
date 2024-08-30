@@ -21,6 +21,7 @@ function FooterLink({ href, children }) {
 			href={href}
 			className="text-zinc-400 hover:text-primary transition-colors text-sm"
 		>
+			<></>
 			{children}
 		</Link>
 	);

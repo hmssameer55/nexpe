@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { FaLongArrowAltRight } from 'react-icons/fa';
 import HeroImg from '@/public/assets/hero-device.png';
+import HeroMobileImg from '@/public/assets/hero-mobile.png';
 import { FaApple, FaGooglePlay } from 'react-icons/fa6';
 import { motion } from 'framer-motion';
 
@@ -14,13 +15,20 @@ export default function Component({
 }) {
 	return (
 		<div className="flex flex-col items-center justify-center w-full max-w-screen-lg p-5 gap-8 md:gap-14 z-10 max-md:min-h-screen">
-			<div className="flex flex-col md:flex-row items-center justify-between w-full gap-8 md:gap-14">
+			<div className="flex flex-col md:flex-row items-center justify-between w-full gap-4 md:gap-14">
 				<Image
 					src={HeroImg}
 					alt="NexPe App Screenshot"
 					width={350}
 					height={600}
-					className="object-contain w-full max-w-[200px] md:max-w-[350px]"
+					className="object-contain w-full size-96 hidden md:block"
+				/>
+				<Image
+					src={HeroMobileImg}
+					alt="NexPe App Screenshot"
+					width={350}
+					height={600}
+					className="object-contain w-full size-80  block md:hidden"
 				/>
 
 				<div className="w-full space-y-4 md:space-y-8 text-center md:text-left">

@@ -42,12 +42,12 @@ const FAQItem = ({ question, answer, isOpen, onToggle, index }) => {
 		>
 			<Card className="overflow-hidden bg-transparent border-b border-gray-800">
 				<button
-					className="flex w-full justify-between items-center text-left px-6 py-4"
+					className="flex w-full justify-between items-start md:items-center text-left px-6 py-4"
 					onClick={() => onToggle(index)}
 					aria-expanded={isOpen}
 				>
 					<span
-						className={`text-base md:text-lg font-medium transition-colors duration-200 ${
+						className={`text-sm md:text-lg font-medium transition-colors duration-200 ${
 							isOpen ? 'text-primary' : 'text-gray-200'
 						}`}
 					>
@@ -62,9 +62,9 @@ const FAQItem = ({ question, answer, isOpen, onToggle, index }) => {
 						}`}
 					>
 						{isOpen ? (
-							<Minus className="w-6 h-6 text-white" />
+							<Minus className="size-4 md:size-6 text-white" />
 						) : (
-							<Plus className="w-6 h-6 text-primary" />
+							<Plus className="size-4 md:size-6 text-primary" />
 						)}
 					</motion.div>
 				</button>
@@ -106,7 +106,7 @@ const FAQItem = ({ question, answer, isOpen, onToggle, index }) => {
 										initial={{ opacity: 0, y: 20 }}
 										animate={{ opacity: 1, y: 0 }}
 										transition={{ duration: 0.4, delay: index * 0.02 }}
-										className="inline-block mr-1"
+										className="inline-block mr-1 text-xs md:text-base"
 									>
 										{word}
 									</motion.span>
