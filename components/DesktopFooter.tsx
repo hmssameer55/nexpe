@@ -47,15 +47,37 @@ export default function DesktopFooter() {
 						<SocialIcon href="https://instagram.com" Icon={FaInstagram} />
 					</div>
 					<div className="flex flex-wrap justify-center gap-4">
-						<FooterLink href="/terms">Terms and Conditions</FooterLink>
-						<FooterLink href="/privacy">Privacy Policy</FooterLink>
-						<FooterLink href="/cancellation">
+						<FooterLink href="/terms-and-conditions.html">
+							Terms and Conditions
+						</FooterLink>
+						<FooterLink href="/privacy-policy.html">Privacy Policy</FooterLink>
+						<FooterLink href="/cancellation-and-refunds.html">
 							Cancellation and Refunds
 						</FooterLink>
 					</div>
-					<p className="text-sm text-zinc-400">
-						© 2024 GoNexPe. All rights reserved.
-					</p>
+					<div className="self-start space-y-10 pl-20">
+						<div className="text-sm max-w-60 space-y-2">
+							<span className="text-primary">Office Address :</span>
+							<p className="text-zinc-400">
+								NEAR NAYANDAHALLI, NO 187, MYSORE ROAD, Pramod Layout,
+								Bengaluru, Bengaluru Urban, Karnataka, 560039
+							</p>
+						</div>
+						<p className="text-sm  text-primary">
+							GST : <span className="text-zinc-400">29AAYCA3552C1ZF</span>
+						</p>
+						<div className="space-y-2">
+							<p className="text-sm text-zinc-400">
+								© 2024 GoNexPe. All rights reserved.
+							</p>
+							<p className="text-sm text-zinc-400">
+								Powerd by{' '}
+								<span className="text-primary uppercase">
+									Automate Innovation Pvt Ltd
+								</span>
+							</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
