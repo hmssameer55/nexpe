@@ -143,7 +143,7 @@ export default function Component() {
 	return (
 		<div
 			ref={ref}
-			className="md:min-h-screen flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20 p-5 md:p-20"
+			className="md:min-h-screen flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20 p-4 md:p-20"
 		>
 			<motion.h2
 				initial={{ opacity: 0, y: -50 }}

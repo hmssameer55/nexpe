@@ -7,6 +7,7 @@ import HeroImg from '@/public/assets/hero-device.png';
 import HeroMobileImg from '@/public/assets/hero-mobile.png';
 import { FaApple, FaGooglePlay } from 'react-icons/fa6';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function Component({
 	onScrollTo,
@@ -40,14 +41,16 @@ export default function Component({
 					</h1>
 					<p className="text-lg md:text-xl">Pay as you go, Next</p>
 					<div className="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-5 text-base md:text-xl font-semibold tracking-wide">
-						<motion.button
-							className="inline-flex h-12 animate-shimmer items-center justify-center rounded-full border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 md:px-10 py-6 md:py-8 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
-							whileHover={{ scale: 1.05 }}
-							whileTap={{ scale: 0.95 }}
-						>
-							<FaGooglePlay size={20} color="#FDB665" className="mr-2.5" />
-							<span>Playstore</span>
-						</motion.button>
+						<Link href={"https://play.google.com/store/apps/details?id=com.nexpe"} target='_blank'>
+							<motion.button
+								className="inline-flex h-12 animate-shimmer items-center justify-center rounded-full border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 md:px-10 py-6 md:py-8 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+								whileHover={{ scale: 1.05 }}
+								whileTap={{ scale: 0.95 }}
+							>
+								<FaGooglePlay size={20} color="#FDB665" className="mr-2.5" />
+								<span>Playstore</span>
+							</motion.button>
+						</Link>
 						<motion.button
 							className="inline-flex h-12 animate-shimmer items-center justify-center rounded-full border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 md:px-10 py-6 md:py-8 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
 							whileHover={{ scale: 1.05 }}

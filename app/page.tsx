@@ -11,6 +11,7 @@ import FAQ from '@/components/Faq';
 import Social from '@/components/Social';
 import DesktopFooter from '@/components/DesktopFooter';
 import AnimatedSection from '@/components/AnimatedSection';
+import WhyNexPe from '@/components/WhyNexpe';
 
 const useMediaQuery = (query: string) => {
 	const [matches, setMatches] = useState(false);
@@ -37,6 +38,7 @@ export default function Component() {
 		'Home',
 		'Our Story',
 		'Payment Partners',
+		'Why NexPe',
 		'Social',
 		'Faq',
 		'Support',
@@ -144,7 +146,7 @@ export default function Component() {
 					className={`${
 						isMobile ? 'w-screen' : 'w-screen h-screen flex-shrink-0'
 					}
-					${index == 5 && 'md:max-w-md md:ml-10 !p-0'}
+					${index == 6 && 'md:max-w-md md:ml-10 !p-0'}
 						 flex flex-col items-center justify-center p-5 md:p-10`}
 				>
 					{index === 0 ? (
@@ -162,9 +164,13 @@ export default function Component() {
 						<PaymentPartners />
 					) : index === 3 ? (
 						<AnimatedSection index={index}>
-							<Social />
+							<WhyNexPe />
 						</AnimatedSection>
 					) : index === 4 ? (
+						<AnimatedSection index={index}>
+							<Social />
+						</AnimatedSection>
+					) : index === 5 ? (
 						<AnimatedSection index={index}>
 							<FAQ />
 						</AnimatedSection>

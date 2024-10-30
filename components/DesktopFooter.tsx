@@ -55,7 +55,7 @@ export default function DesktopFooter() {
 							Cancellation and Refunds
 						</FooterLink>
 					</div>
-					<div className="self-start space-y-10 pl-20">
+					<div className="self-start space-y-10 md:pl-20">
 						<div className="text-sm max-w-60 space-y-2">
 							<span className="text-primary">Office Address :</span>
 							<p className="text-zinc-400">
