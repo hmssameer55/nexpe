@@ -4,7 +4,7 @@ import { motion, useInView } from 'framer-motion';
 import { Star, ArrowRight } from 'lucide-react';
 import { FaApple, FaGooglePlay } from 'react-icons/fa6';
 import { useRef } from 'react';
-import { Button } from '@/components/ui/button';
+import Reviews from './Reviews';
 
 export default function Social() {
 	const sectionRef = useRef(null);
@@ -14,16 +14,23 @@ export default function Social() {
 		{
 			name: 'Play Store',
 			icon: <FaGooglePlay size={24} className="text-green-400" />,
-			downloads: '5000+',
+			downloads: '2500+',
 			color: 'from-green-500/20 to-green-500/5',
 			borderColor: 'border-green-500/20',
+			ratings: 4.9,
+			reviews: '300+',
+			progressClassName: 'w-5/6'
+
 		},
 		{
 			name: 'App Store',
 			icon: <FaApple size={24} className="text-blue-400" />,
-			downloads: '5000+',
+			downloads: '1200+',
 			color: 'from-blue-500/20 to-blue-500/5',
 			borderColor: 'border-blue-500/20',
+			ratings: 4.6,
+			reviews: '100+',
+			progressClassName: 'w-4/6'
 		},
 	];
 
@@ -42,7 +49,7 @@ export default function Social() {
 	};
 
 	return (
-		<section className="min-h-screen flex items-center " ref={sectionRef}>
+		<section className="min-h-screen flex flex-col justify-center items-center h-full" ref={sectionRef}>
 			<div className="container mx-auto px-4 py-10 md:py-16 flex flex-col lg:flex-row items-center justify-between gap-10">
 				<motion.div
 					initial="hidden"
@@ -102,7 +109,7 @@ export default function Social() {
 										</p>
 										<div className="flex items-center space-x-1">
 											<span className="text-lg font-semibold text-white">
-												4.9
+												{store.ratings}
 											</span>
 											<div className="flex">
 												{[...Array(5)].map((_, i) => (
@@ -118,10 +125,10 @@ export default function Social() {
 									</div>
 									<p className="text-white/70">Active Installs</p>
 									<div className="w-full bg-white/20 rounded-full h-2">
-										<div className="bg-white w-4/5 h-2 rounded-full"></div>
+										<div className={`bg-white ${store.progressClassName}  h-2 rounded-full`}></div>
 									</div>
 									<p className="text-sm text-white/70 text-right">
-										5000+ Reviews
+										{store.reviews} Reviews
 									</p>
 								</div>
 							</div>
@@ -129,6 +136,7 @@ export default function Social() {
 					))}
 				</div>
 			</div>
+			<div className='container md:px-40 mx-auto'><Reviews /></div>
 		</section>
 	);
 }
